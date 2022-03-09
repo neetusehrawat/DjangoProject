@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     {% load static %}
+    <link rel="stylesheet"  href="{% static 'style.css' %}">
+</head>
+<body>
+<center>
+     <h2>Employees assigned to Project {{prj.p_name}} </h2>
+     {% for emp in emp %}
+        <li>{{emp}}</li>
+      {% endfor %}
+
+    <br>
+     <input type="button" value="Go Back" onClick="history.go(-1);">
+</center>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+body {
+  background-color: lightgray;
+}
+
+h1{
+ color: red;
+  font-family: verdana;
+  font-size: 150%;
+}
+nav{
+  width: 30%;
+  padding-left: 15px;
+  margin-left: 30px;
+  background-color: lightgray;
+  font-size: 120%;
+}
+
+
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+a:link{
+text-decoration: none; /* removes underline from link*/
+}
+
+
+
+

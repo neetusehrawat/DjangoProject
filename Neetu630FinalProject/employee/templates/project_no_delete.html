@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     {% load static %}
+    <link rel="stylesheet"  href="{% static 'style.css' %}">
+</head>
+<body>
+<center>
+    <h2>Project {{prj.p_name}} is assigned to below employess</h2>
+     {% for e in emp %}
+        <li>{{e}}</li>
+      {% endfor %}
+    <h3>Cannot perform delete operation</h3>
+    <br>
+    <input type="button" value="Go Back" onClick="history.go(-1);">
+</center>
+
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+      {% load static %}
+    <link rel="stylesheet"  href="{% static 'style.css' %}">
+</head>
+<body>
+<center>
+<h2>Employees List</h2>
+<br>
+<a href = "/add/">Add New Employee</a>
+<br>
+<br>
+<table class="table">
+        <th> Department ID </th>
+<!--        <th> ID </th>-->
+        <th> Employee ID </th>
+        <th>  Name</th>
+        <th>  DOB  </th>
+        <th>  Email</th>
+        <th>  Contact</th>
+        <th>  Gender</th>
+    </tr>
+    {% for e in emp %}
+
+
+
+    <tr>
+
+        <td>{{e.department.id }} &nbsp</td>
+<!--        <td>{{ e.id }}</td>-->
+        <td>&nbsp {{ e.e_id }} &nbsp</td>
+        <td> &nbsp {{ e.e_name }} &nbsp</td>
+         <td> &nbsp   {{ e.e_dob }} &nbsp</td>
+        <td> &nbsp  {{ e.e_email }} &nbsp</td>
+        <td> &nbsp  {{ e.e_contact }} &nbsp</td>
+        <td>&nbsp   {{ e.e_gender }} &nbsp</td>
+        <td><a href="/employees/{{e.id}}">&nbsp Edit &nbsp</a></td>
+           <td><a href="/view_emp_projects/{{e.id}}">&nbsp View Assignment &nbsp</a></td>
+        <td><a href="/dependents/{{e.id}}">&nbsp View Dependents &nbsp</a></td>
+         <td><a href="/delete/{{e.id}}">&nbsp Delete &nbsp</a></td>
+
+
+
+    </tr>
+  {% endfor %}
+  </table>
+<br>
+
+<!--<input type="button" value="Go Back" onClick="history.go(-1);">-->
+    <a href="/home">Go Back to Home</a>
+    </center>
+</body>
+</html>

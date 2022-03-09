@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+      {% load static %}
+    <link rel="stylesheet"  href="{% static 'style.css' %}">
+</head>
+<body>
+<center>
+<h2>Dependents</h2>
+<table class="table">
+    <tr>
+
+        <th>Employee Id</th>
+        <th>  Name</th>
+        <th>Relation</th>
+        <th>  DOB  </th>
+
+        <th>  Gender</th>
+    </tr>
+    {% for d in depend %}
+    <tr>
+        <td>&nbsp {{emp.e_id}}&nbsp</td>
+        <td>&nbsp{{ d.d_name }}&nbsp</td>
+         <td> &nbsp  {{ d.d_relation }} &nbsp</td>
+
+        <td> &nbsp  {{ d.d_dob }} &nbsp</td>
+        <td>&nbsp   {{ d.e_gender }} &nbsp</td>
+        <td>
+            <a href="/edit_dependent/{{ d.id }}"><span class="glyphicon glyphicon-pencil" > &nbsp Edit &nbsp</span></a> </td>
+           <td> <a href="/delete_dependent/{{ d.id }}"> &nbsp Delete &nbsp</a>
+        </td>
+    </tr>
+{% endfor %}
+</table>
+    <br>
+<!--<input type="button" value="Go Back" onClick="history.go(-1);">-->
+<a href="/employees">Go Back</a>
+</center>
+</body>
+</html>

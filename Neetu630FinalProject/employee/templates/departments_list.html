@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>departments</title>
+        {% load static %}
+    <link rel="stylesheet"  href="{% static 'style.css' %}">
+</head>
+<body>
+<center>
+<br>
+<h2>Available Departments</h2>
+<!--<br>-->
+<!--{% for d in dept %}-->
+<!--<li><a href="/departments/{{d.id}}">{{d}} ({{d.department_id}}) </a></li>-->
+
+<!--{% endfor %}-->
+<!--<br>-->
+<br>
+<a href="/add_department/">Add New Department</a>
+<br>
+<br>
+
+<table class="table">
+    <tr>
+
+        <th>Department Code &nbsp</th>
+        <th>  Department Name &nbsp</th>
+    </tr>
+    {% for d in dept %}
+    <tr>
+        <td>{{d.department_code}}</td>
+        <td>{{d}}</td>
+
+      <td>
+          <a href="/edit_department/{{d.id}}">&nbsp Edit &nbsp </a></td>
+
+           <td> <a href="/departments/{{d.id}}"><span class="glyphicon glyphicon-pencil" >&nbsp View Employess &nbsp</span></a>
+             <td><a href="/projects/{{d.id}}">&nbsp View Projects &nbsp</a>
+        </td>
+    </tr>
+{% endfor %}
+</table>
+<br>
+<!--<input type="button" value="Go Back" onClick="history.go(-1);   ">-->
+     <a href="/home">Go Back to Home</a>
+
+</center>
+</body>
+</html>

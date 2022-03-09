@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+      {% load static %}
+    <link rel="stylesheet"  href="{% static 'style.css' %}">
+</head>
+<body>
+<center>
+<h2>Edit Project details:</h2>
+<br>
+<form method="POST" class="post-form">
+        {% csrf_token %}
+    {{ form.as_p }}
+  <br>
+    <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    <input type="button" value="Cancel" onClick="history.go(-1);">
+</form>
+<br>
+
+<!--<a href="/employees">Cancel</a>-->
+</center>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+         {% load static %}
+    <link rel="stylesheet"  href="{% static 'style.css' %}">
+</head>
+<body>
+<center>
+<br>
+<h2>Assignment Details:</h2>
+    <br>
+<a href="/add_assignment/">Assign projects</a>
+<br>
+<br>
+    <table class="table">
+    <tr>
+
+        <th>Project Name &nbsp</th>
+        <th>  Employee Name &nbsp</th>
+    </tr>
+        {% for a in assign %}
+    <tr>
+        <td>&nbsp {{a.project}} &nbsp</td>
+        <td>&nbsp {{a.employee}} &nbsp</td>
+    </tr>
+        {% endfor %}
+    </table>
+    <br>
+
+      <a href="/home">Go Back to Home</a>
+</center>
+
+</body>
+</html>

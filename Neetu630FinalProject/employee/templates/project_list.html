@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+        {% load static %}
+    <link rel="stylesheet"  href="{% static 'style.css' %}">
+</head>
+<body>
+<center>
+<br>
+<h2>Available Departments</h2>
+<!--<br>-->
+<!--{% for d in dept %}-->
+<!--<li><a href="/departments/{{d.id}}">{{d}} ({{d.department_id}}) </a></li>-->
+
+<!--{% endfor %}-->
+<!--<br>-->
+<br>
+<a href="/add_project/">Add New Project</a>
+<br>
+<br>
+
+<table class="table">
+    <tr>
+
+        <th>Project name &nbsp</th>
+
+    </tr>
+    {% for p in prj %}
+    <tr>
+        <td>{{p.p_name}}</td>
+
+
+      <td>
+          <a href="/edit_project/{{p.id}}">&nbsp Edit &nbsp </a></td>
+
+
+
+
+                 <td><a href="/view_projects_employees/{{p.id}}">&nbsp View Employees &nbsp</a>
+                      <td><a href="/delete_projects/{{p.id}}">&nbsp Delete &nbsp</a>
+        </td>
+    </tr>
+{% endfor %}
+</table>
+<br>
+<!--<input type="button" value="Go Back" onClick="history.go(-1);   ">-->
+     <a href="/home">Go Back to Home</a>
+
+</center>
+
+</body>
+</html>

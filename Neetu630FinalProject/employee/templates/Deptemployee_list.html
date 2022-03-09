@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>employees</title>
+         {% load static %}
+    <link rel="stylesheet"  href="{% static 'style.css' %}">
+</head>
+<body>
+<center>
+<h2>Department - {{dept}} - Avilable Employees</h2>
+<br>
+<!--{% for e in emp %}-->
+<!--<li>{{e}}</li>-->
+<!--{% endfor %}-->
+
+<table class="table">
+    <tr>
+
+        <th> ID </th>
+        <th>  Name</th>
+        <th>  DOB  </th>
+        <th>  Email</th>
+        <th>  Contact</th>
+        <th>  Gender</th>
+    </tr>
+    {% for e in emp %}
+    <tr>
+
+        <td>&nbsp{{ e.e_id }} &nbsp</td>
+        <td>&nbsp{{ e.e_name }} &nbsp</td>
+         <td> &nbsp  {{ e.e_dob }} &nbsp</td>
+        <td> &nbsp  {{ e.e_email }} &nbsp</td>
+        <td>&nbsp   {{ e.e_contact }}&nbsp </td>
+        <td>&nbsp   {{ e.e_gender }}&nbsp</td>
+
+<!--            <a href="/edit/{{ e.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>-->
+<!--            <a href="/delete/{{ e.id }}">Delete</a>-->
+
+    </tr>
+{% endfor %}
+
+</table>
+<br>
+<input type="button" value="Go Back" onClick="history.go(-1);">
+
+</center>
+</body>
+</html>
